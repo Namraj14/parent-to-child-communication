@@ -10,7 +10,11 @@ In the child component’s JavaScript file, use `dispatchEvent()` to create and 
 
 ```js
 // childComponent.js
-this.dispatchEvent(new CustomEvent('eventname', { detail: { data } }));
+const myEvent = new CustomEvent('notifyparent', {
+    detail: { message: 'Hello from Child!' }
+});
+
+this.dispatchEvent(myEvent);
 ```
 
 - `eventname`: The name of the custom event.
@@ -23,11 +27,15 @@ this.dispatchEvent(new CustomEvent('eventname', { detail: { data } }));
 When a specific action occurs (e.g., button click), the child emits the custom event.
 
 ```js
-handleClick() {
-    const dataToSend = 'Hello from child!';
-    this.dispatchEvent(new CustomEvent('myevent', {
-        detail: { message: dataToSend }
-    }));
+ handleClick() {
+        // Step 1: Create the event
+        const myEvent = new CustomEvent('notifyparent', {
+            detail: { message: 'Hello from Child!' }
+        });
+
+        // Step 2: Dispatch the event
+        this.dispatchEvent(myEvent);
+    }
 }
 ```
 
