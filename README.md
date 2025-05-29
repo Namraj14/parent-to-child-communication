@@ -39,9 +39,12 @@ When a specific action occurs (e.g., button click), the child emits the custom e
 }
 ```
  childComponent.html
- <template>  
-    <lightning-button label="Click Me" onclick={handleClick}></lightning-button>  
-</template>  
+```html
+<template>
+    <lightning-button label="Click Me" onclick={handleClick}></lightning-button>
+</template>
+```
+
 
 ---
 
