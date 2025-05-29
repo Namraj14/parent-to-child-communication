@@ -11,8 +11,8 @@ In the child component’s JavaScript file, use `dispatchEvent()` to create and 
 ```js
 // childComponent.js
 const myEvent = new CustomEvent('notifyparent', {
-    detail: { message: 'Hello from Child!' }
-});
+            detail: { message: 'Hello from Child!' }
+        });
 
 this.dispatchEvent(myEvent);
 ```
@@ -38,6 +38,10 @@ When a specific action occurs (e.g., button click), the child emits the custom e
     }
 }
 ```
+childComponent.html
+  <template>  
+    <lightning-button label="Click Me" onclick={handleClick}></lightning-button>  
+</template>  
 
 ---
 
@@ -47,11 +51,11 @@ In the parent component’s HTML file, where the child component is used, add an
 
 ```html
 <!-- parentComponent.html -->
-<c-child-component onmyevent={handleMyEvent}></c-child-component>
+ <c-child-component onnotifyparent={handleNotify}></c-child-component>
 ```
 
-- `onmyevent`: The event name that is used in child with on prefix (on+eventname)
-- `handleMyEvent`: The parent method that handles the event. (This method will be in parent)
+- `onnotifyparent`: The event name that is used in child with on prefix (on+eventname)
+- `handleNotify`: The parent method that handles the event. (This method will be in parent)
 
 ---
 
@@ -61,10 +65,10 @@ In the parent component’s JavaScript file, define the handler method:
 
 ```js
 // parentComponent.js
-handleMyEvent(event) {
+handleNotify(event) {
     // Access the data sent from the child
-    const message = event.detail.message;
-    console.log('Message from child:', message);
+    const messageFromChild = event.detail.message;
+    console.log('Message from child:', messageFromChild);
 }
 ```
 
