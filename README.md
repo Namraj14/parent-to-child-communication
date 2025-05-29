@@ -70,11 +70,19 @@ In the parent component’s JavaScript file, define the handler method:
 // parentComponent.js
 handleNotify(event) {
     // Access the data sent from the child
-    const messageFromChild = event.detail.message;
+    const messageFromChild = event.detail.message;   
     console.log('Message from child:', messageFromChild);
 }
 ```
+```
+ You use event.detail.<property> based on what you put inside detail in the child.
+| Code in Child                       | Access in Parent                        |
+| ----------------------------------- | --------------------------------------- |
+| `detail: { message: 'text' }`       | `event.detail.message`                  |
+| `detail: { data: 'value' }`         | `event.detail.data`                     |
+| `detail: { name: 'John', age: 30 }` | `event.detail.name`, `event.detail.age` |
 
+```
 ---
 
 ## ✅ Summary
