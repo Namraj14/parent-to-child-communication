@@ -24,29 +24,36 @@ Think of @api as giving permission to the parent to set or pass a value to that 
 
 
 # Example
-🧒 Child Component (childComponent)
-childComponent.js
+## 🧒 Child Component (`childComponent`)
+### `childComponent.js`
+
+```js
 import { LightningElement, api } from 'lwc';
 
 export default class ChildComponent extends LightningElement {
     @api message; // public property
 }
-
-childComponent.html
+### `childComponent.html`
+```html
 <template>
     <p>The message from parent is: {message}</p>
 </template>
 
-👨‍👩‍👧 Parent Component (parentComponent)
-parentComponent.js
+
+### `parentComponent.js`
+
+```js
 import { LightningElement } from 'lwc';
 
 export default class ParentComponent extends LightningElement {
     greeting = 'Hello from Parent!';
 }
 
-parentComponent.html
+### `parentComponent.html`
+
+```html
 <template>
     <!-- Pass data to child -->
     <c-child-component message={greeting}></c-child-component>
 </template>
+
