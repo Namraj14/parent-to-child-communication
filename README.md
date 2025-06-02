@@ -24,6 +24,7 @@ Think of @api as giving permission to the parent to set or pass a value to that 
 
 
 # Example
+
 ### `childComponent.js`
 ```js
 import { LightningElement, api } from 'lwc';
