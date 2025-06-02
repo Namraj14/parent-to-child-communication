@@ -24,15 +24,14 @@ Think of @api as giving permission to the parent to set or pass a value to that 
 
 
 # Example
-## 🧒 Child Component (`childComponent`)
 ### `childComponent.js`
-
 ```js
 import { LightningElement, api } from 'lwc';
 
 export default class ChildComponent extends LightningElement {
     @api message; // public property
 }
+
 ### `childComponent.html`
 ```html
 <template>
