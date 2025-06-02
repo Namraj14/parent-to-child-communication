@@ -54,7 +54,7 @@ export default class ParentComponent extends LightningElement {
 ```html
 <template>
     <!-- Pass data to child -->
-    <c-child-component message={greeting}></c-child-component> //message should be present in child with @api decorated
+    <c-child-component message={greeting}></c-child-component> //message should be present in child js with @api decorated and greeting should be present in parent js with the value u want to pass
 </template>
 
 
