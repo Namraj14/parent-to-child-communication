@@ -1,0 +1,16 @@
+<template>
+    <lightning-card  title="Child Component">
+        <div class="slds-p-around_medium">
+            <h2>Child Component receiving Data to Parent</h2>
+        </div>
+        <template if:true={accountRecord}>
+        <h2>This is Message from Parent</h2>
+        <p>{accountRecord.Name}</p>
+        <p>{accountRecord.Phone}</p>
+        <p>{accountRecord.Email}</p>
+        </template>
+        <template if:false={accountRecord}>
+        <h2>No Account Found</h2>
+        </template>
+    </lightning-card>
+</template>
