@@ -1,0 +1,12 @@
+<template>
+    <lightning-card title="Parent Component">
+        <div class="slds-p-around_medium">
+            <h2>Parent Component Pushing Data to Child</h2>
+        </div>
+
+        <c-parent-to-child-child account-record ={parentMessage}></c-parent-to-child-child>
+
+        <lightning-button variant="brand" label="Send to child" onclick={handleChildClick}></lightning-button>
+    </lightning-card>
+    
+</template>
